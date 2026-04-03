@@ -1,15 +1,8 @@
-# token-minter
+# SPL Token Minter
 
-To install dependencies:
+Just a simple API that mints SPL tokens.
+Useful for getting e.g. fake USDC for prototype apps on Solana devnet.
 
-```bash
-bun install
-```
+To create a new token mint, run `bun launch`. Configured via JSON file, see `script-config.example.json`.
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.3.4. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+To start the server in dev mode, run `bun dev`
