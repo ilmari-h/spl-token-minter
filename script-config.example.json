@@ -1,0 +1,6 @@
+{
+  "name": "USD Coin",
+  "symbol": "USDC",
+  "decimals": 9,
+  "metadataUri": "https://gist.githubusercontent.com/ilmari-h/fdd24af6236c036b0d61714da8a15a18/raw/62079e2c51ce9b3f16c5fc2095f26db0bcacb546/fake-usdc-metadata"
+}
