@@ -65,8 +65,13 @@ Bun.serve({
             data: { signature, recipient, amount: parsed.data.amount },
           });
         } catch (err) {
+          console.error("POST /mint/:recipient failed:", err);
           const message = err instanceof Error ? err.message : "Mint failed";
-          return jsonResponse({ success: false, error: message }, 500);
+          const context = err instanceof Error ? err.cause : undefined;
+          return jsonResponse(
+            { success: false, error: message, context: context ?? null },
+            500,
+          );
         }
       },
     },

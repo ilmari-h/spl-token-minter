@@ -107,7 +107,14 @@ export async function mintTokens(
   const signature = getSignatureFromTransaction(tx);
 
   const sendTransaction = sendTransactionWithoutConfirmingFactory({ rpc });
-  await sendTransaction(tx, { commitment: "confirmed" });
 
+  try {
+    await sendTransaction(tx, { commitment: "confirmed" });
+  } catch (err) {
+    console.error("sendTransaction failed:", { signature, recipient, amount, err });
+    throw err;
+  }
+
+  console.log("Minted tokens:", { signature, recipient, amount: rawAmount.toString() });
   return signature;
 }
